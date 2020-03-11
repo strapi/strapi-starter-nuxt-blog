@@ -17,5 +17,6 @@
     "nuxt": "^2.0.0",
     "uikit": "^3.2.3"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "license": "MIT"
 }
