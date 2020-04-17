@@ -1,0 +1,7 @@
+[build]
+  base = "frontend/"
+  publish = "dist/"
+  command = "yarn generate"
+
+[template.environment]
+  API_URL = "API_URL"
