@@ -17,6 +17,9 @@
     "nuxt": "^2.0.0",
     "uikit": "^3.2.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/runtime-corejs3": "^7.9.6",
+    "core-js": "^3.6.5"
+  },
   "license": "MIT"
 }
