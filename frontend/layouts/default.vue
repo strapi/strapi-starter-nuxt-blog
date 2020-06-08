@@ -17,8 +17,8 @@
         <div class="uk-navbar-right">
           <ul class="uk-navbar-nav">
               <li :key="category.id" v-for="category in categories">
-                <router-link :to="{ name: 'categories-id', params: { id: category.id }}" tag="a">{{ category.name }}
-                </router-link>
+                <nuxt-link :to="{ name: 'categories-id', params: { id: category.id }}" tag="a">{{ category.name }}
+                </nuxt-link>
               </li>
           </ul>
         </div>
@@ -34,8 +34,8 @@
                     <div class="uk-width-1-2@s">
                         <ul class="uk-nav-primary uk-nav-parent-icon" uk-nav>
                           <li :key="category.id" v-for="category in categories">
-                            <router-link class="uk-modal-close" :to="{ name: 'categories-id', params: { id: category.id }}" tag="a">{{ category.name }}
-                            </router-link>
+                            <nuxt-link class="uk-modal-close" :to="{ name: 'categories-id', params: { id: category.id }}" tag="a">{{ category.name }}
+                            </nuxt-link>
                           </li>
                         </ul>
                     </div>
