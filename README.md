@@ -25,7 +25,7 @@ Once you have created these accounts you can deploy your instance by clicking on
 
 To deploy this Strapi instance you'll need:
 
-- [A Netilfy account](https://app.netlify.com/signup) for free
+- [A Netlify account](https://app.netlify.com/signup) for free
 
 Once you have created your account you can deploy your instance by clicking on this button.
 
