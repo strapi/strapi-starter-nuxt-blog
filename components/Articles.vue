@@ -2,7 +2,7 @@
   <div>
     <div class="uk-child-width-1-2" uk-grid>
       <div>
-        <router-link
+        <nuxt-link
           v-for="article in leftArticles"
           :to="{ name: 'articles-id', params: { id: article.id } }"
           class="uk-link-reset"
@@ -23,11 +23,11 @@
               <p id="title" class="uk-text-large">{{ article.title }}</p>
             </div>
           </div>
-        </router-link>
+        </nuxt-link>
       </div>
       <div>
         <div class="uk-child-width-1-2@m uk-grid-match" uk-grid>
-          <router-link
+          <nuxt-link
             v-for="article in rightArticles"
             :to="{ name: 'articles-id', params: { id: article.id } }"
             class="uk-link-reset"
@@ -48,7 +48,7 @@
                 <p id="title" class="uk-text-large">{{ article.title }}</p>
               </div>
             </div>
-          </router-link>
+          </nuxt-link>
         </div>
       </div>
     </div>
