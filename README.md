@@ -2,7 +2,7 @@
 
 Nuxt starter for creating a blog with Strapi.
 
-This starter allows you to try Strapi with Nuxt.js with the example of a simple blog. It is fully customizable and due to the fact that it is open source, fully open to contributions. Do not hesitate to add new features etc ...
+This starter allows you to try Strapi with Nuxt with the example of a simple blog. It is fully customizable and due to the fact that it is open source, fully open to contributions. Do not hesitate to add new features etc ...
 
 You may want to know how to develop such a starter by your own! This starter is actually the result of this [tutorial](https://strapi.io/blog/build-a-blog-using-nuxt-strapi-and-apollo)
 
@@ -10,28 +10,26 @@ You may want to know how to develop such a starter by your own! This starter is 
 
 ### Deploy the backend
 
-To deploy this Strapi instance you'll need:
+To deploy the Strapi instance you'll need:
 
 - [An Heroku account](https://signup.heroku.com/) for free
 - [A Cloudinary account for saving images](https://cloudinary.com/users/register/free) for free
 
 Once you have created these accounts you can deploy your instance by clicking on this button
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/strapi/strapi-starter-nuxt-blog)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/strapi/strapi-starter-blog)
+
+[Here](https://github.com/strapi/strapi-starter-blog) is the repository of the backend of this starter
 
 ### Deploy the frontend
 
-**Netflify**
+**On Netflify**
 
-To deploy this Strapi instance you'll need:
+Coming soon...
 
-- [A Netilfy account](https://app.netlify.com/signup) for free
+**On Vercel**
 
-Once you have created your account you can deploy your instance by clicking on this button.
-
-[![Deploy](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/strapi/strapi-starter-nuxt-blog)
-
-- Select a repository name and fill the API_URL with your Strapi instance on Heroku (eg: https://your-app.herokuapp.com) without the trailing slash
+Coming soon...
 
 ### Features
 
@@ -49,62 +47,29 @@ Once you have created your account you can deploy your instance by clicking on t
 
 ### Getting started
 
-**Clone the repository and install dependencies**
+**Backend**
+
+See full instructions [here](https://github.com/strapi/strapi-starter-blog)
+
+**Frontend**
 
 ```bash
 git clone https://github.com/strapi/strapi-starter-nuxt-blog.git
 cd strapi-starter-nuxt-blog
-
-# Using yarn
-yarn setup:yarn
-
-# Using npm
-npm run setup:npm
 ```
 
-### Scaffold your project
-
-This command will launch both of your backend and frontend server and do a data migration in your backend server
+#### Start the frontend server
 
 ```bash
 # Using yarn
-yarn build:yarn
-yarn develop:yarn
-
-# Using npm
-npm run build:npm
-npm run develop:npm
-```
-
-Alternatively, you can still start your servers separately:
-
-### Start the backend server
-
-```bash
-cd backend
-
-# Using yarn
-yarn build
+yarn install
 yarn develop
 
 # Using npm
-npm run build
-npm run develop
-```
-
-### Start the frontend server
-
-```bash
-cd frontend
-
-# Using yarn
-yarn develop
-
-# Using npm
+npm install
 npm run develop
 ```
 
 Nuxt server is running here => [http://localhost:3000](http://localhost:3000)
-Strapi server is running here => [http://localhost:1337](http://localhost:1337)
 
 Enjoy this starter
