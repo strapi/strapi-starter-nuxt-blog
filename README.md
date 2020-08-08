@@ -23,7 +23,7 @@ Once you have created these accounts you can deploy your instance by clicking on
 
 ### Deploy the frontend
 
-**On Netflify**
+**On Netlify**
 
 Coming soon...
 
