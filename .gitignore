@@ -109,3 +109,7 @@ coverage
 exports
 .cache
 build
+
+# Custom
+.vscode
+dist

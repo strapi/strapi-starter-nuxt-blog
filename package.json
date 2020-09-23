@@ -8,7 +8,10 @@
     "develop": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue .",
+    "lint:fix": "eslint --ext .js,.vue . --fix",
+    "lintfix": ""
   },
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.0-rc17",
@@ -19,7 +22,14 @@
   },
   "devDependencies": {
     "@babel/runtime-corejs3": "^7.9.6",
-    "core-js": "^3.6.5"
+    "babel-eslint": "^10.1.0",
+    "core-js": "^3.6.5",
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-vue": "^6.2.2",
+    "prettier": "^2.1.2"
   },
   "license": "MIT"
 }
