@@ -4,9 +4,9 @@
       <div>
         <nuxt-link
           v-for="article in leftArticles"
+          :key="article.id"
           :to="{ name: 'articles-id', params: { id: article.id } }"
           class="uk-link-reset"
-          :key="article.id"
         >
           <div class="uk-card uk-card-muted">
             <div class="uk-card-media-top">
@@ -14,13 +14,15 @@
             </div>
             <div class="uk-card-body">
               <p
-                id="category"
                 v-if="article.category"
+                id="category"
                 class="uk-text-uppercase"
               >
                 {{ article.category.name }}
               </p>
-              <p id="title" class="uk-text-large">{{ article.title }}</p>
+              <p id="title" class="uk-text-large">
+                {{ article.title }}
+              </p>
             </div>
           </div>
         </nuxt-link>
@@ -29,9 +31,9 @@
         <div class="uk-child-width-1-2@m uk-grid-match" uk-grid>
           <nuxt-link
             v-for="article in rightArticles"
+            :key="article.id"
             :to="{ name: 'articles-id', params: { id: article.id } }"
             class="uk-link-reset"
-            :key="article.id"
           >
             <div class="uk-card uk-card-muted">
               <div class="uk-card-media-top">
@@ -39,13 +41,15 @@
               </div>
               <div class="uk-card-body">
                 <p
-                  id="category"
                   v-if="article.category"
+                  id="category"
                   class="uk-text-uppercase"
                 >
                   {{ article.category.name }}
                 </p>
-                <p id="title" class="uk-text-large">{{ article.title }}</p>
+                <p id="title" class="uk-text-large">
+                  {{ article.title }}
+                </p>
               </div>
             </div>
           </nuxt-link>
@@ -57,13 +61,16 @@
 
 <script>
 export default {
-  data: function() {
-    return {
-      api_url: process.env.strapiBaseUri
-    };
-  },
   props: {
-    articles: Array
+    articles: {
+      type: Array,
+      default: () => [],
+    },
+  },
+  data: function () {
+    return {
+      api_url: process.env.strapiBaseUri,
+    };
   },
   computed: {
     leftArticlesCount() {
@@ -74,7 +81,7 @@ export default {
     },
     rightArticles() {
       return this.articles.slice(this.leftArticlesCount, this.articles.length);
-    }
-  }
+    },
+  },
 };
 </script>

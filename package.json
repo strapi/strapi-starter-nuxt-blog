@@ -10,8 +10,7 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue .",
-    "lint:fix": "eslint --ext .js,.vue . --fix",
-    "lintfix": ""
+    "lint:fix": "eslint --ext .js,.vue . --fix"
   },
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.0-rc17",

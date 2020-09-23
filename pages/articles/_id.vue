@@ -12,11 +12,13 @@
 
     <div class="uk-section">
       <div class="uk-container uk-container-small">
+        <!-- eslint-disable vue/no-v-html -->
         <div
           v-if="article.content"
           id="editor"
           v-html="$md.render(article.content)"
-        ></div>
+        />
+        <!-- eslint-enable vue/no-v-html -->
         <p v-if="article.published_at">
           {{ moment(article.published_at).format("MMM Do YY") }}
         </p>
@@ -34,7 +36,7 @@ export default {
     return {
       article: {},
       moment: moment,
-      api_url: process.env.strapiBaseUri
+      api_url: process.env.strapiBaseUri,
     };
   },
   apollo: {
@@ -43,8 +45,8 @@ export default {
       query: articleQuery,
       variables() {
         return { id: parseInt(this.$route.params.id) };
-      }
-    }
-  }
+      },
+    },
+  },
 };
 </script>
