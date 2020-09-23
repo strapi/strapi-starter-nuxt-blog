@@ -5,6 +5,7 @@
   "author": "You",
   "private": true,
   "scripts": {
+    "dev": "nuxt",
     "develop": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
