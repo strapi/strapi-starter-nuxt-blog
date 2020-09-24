@@ -7,7 +7,7 @@
             <a href="#modal-full" uk-toggle><span uk-icon="icon: table" /></a>
           </li>
           <li>
-            <a href="/">Strapi Blog </a>
+            <nuxt-link to="/" tag="a">Strapi Blog</nuxt-link>
           </li>
         </ul>
       </div>
@@ -16,7 +16,7 @@
         <ul class="uk-navbar-nav">
           <li v-for="category in categories" :key="category.id">
             <nuxt-link
-              :to="{ name: 'categories-id', params: { id: category.id } }"
+              :to="{ name: 'categories-slug', params: { slug: category.slug } }"
               tag="a"
             >
               {{ category.name }}
@@ -51,7 +51,10 @@
                 <li v-for="category in categories" :key="category.id">
                   <nuxt-link
                     class="uk-modal-close"
-                    :to="{ name: 'categories-id', params: { id: category.id } }"
+                    :to="{
+                      name: 'categories-slug',
+                      params: { slug: category.slug },
+                    }"
                     tag="a"
                   >
                     {{ category.name }}
@@ -64,25 +67,19 @@
         </div>
       </div>
     </div>
-
     <nuxt />
   </div>
 </template>
 
 <script>
-import categoriesQuery from "~/apollo/queries/category/categories";
-
 export default {
-  data() {
+  async fetch() {
+    this.categories = await this.$strapi.find("categories");
+  },
+  data: function () {
     return {
       categories: [],
     };
-  },
-  apollo: {
-    categories: {
-      prefetch: true,
-      query: categoriesQuery,
-    },
   },
 };
 </script>

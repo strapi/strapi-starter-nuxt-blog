@@ -4,7 +4,7 @@
       v-if="article.image"
       id="banner"
       class="uk-height-small uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding"
-      :data-src="api_url + article.image.url"
+      :data-src="getStrapiMedia(article.image.url)"
       uk-img
     >
       <h1>{{ article.title }}</h1>
@@ -28,25 +28,26 @@
 </template>
 
 <script>
-import articleQuery from "~/apollo/queries/article/article";
-var moment = require("moment");
+import moment from "moment";
+import { getStrapiMedia } from "../../utils/medias";
 
 export default {
-  data() {
+  async asyncData({ $strapi, params }) {
+    const matchingArticles = await $strapi.find("articles", {
+      slug: params.slug,
+    });
     return {
-      article: {},
-      moment: moment,
-      api_url: process.env.strapiBaseUri,
+      article: matchingArticles[0],
     };
   },
-  apollo: {
-    article: {
-      prefetch: true,
-      query: articleQuery,
-      variables() {
-        return { id: parseInt(this.$route.params.id) };
-      },
-    },
+  data() {
+    return {
+      apiUrl: process.env.strapiBaseUri,
+    };
+  },
+  methods: {
+    moment,
+    getStrapiMedia,
   },
 };
 </script>

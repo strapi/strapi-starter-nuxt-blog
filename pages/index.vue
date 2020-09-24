@@ -3,7 +3,6 @@
     <div class="uk-section">
       <div class="uk-container uk-container-large">
         <h1>Strapi blog</h1>
-
         <Articles :articles="articles" />
       </div>
     </div>
@@ -11,33 +10,16 @@
 </template>
 
 <script>
-import articlesQuery from "~/apollo/queries/article/articles";
 import Articles from "~/components/Articles";
 
 export default {
   components: {
     Articles,
   },
-  data() {
+  async asyncData({ $strapi }) {
     return {
-      articles: [],
+      articles: await $strapi.find("articles"),
     };
-  },
-  apollo: {
-    articles: {
-      prefetch: true,
-      query: articlesQuery,
-      variables() {
-        return { id: parseInt(this.$route.params.id) };
-      },
-    },
-    category: {
-      prefetch: true,
-      query: articlesQuery,
-      variables() {
-        return { id: parseInt(this.$route.params.id) };
-      },
-    },
   },
 };
 </script>
