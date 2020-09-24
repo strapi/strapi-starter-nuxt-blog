@@ -30,6 +30,7 @@
 <script>
 import moment from "moment";
 import { getStrapiMedia } from "../../utils/medias";
+import { getMetaTags } from "../../utils/seo";
 
 export default {
   async asyncData({ $strapi, params }) {
@@ -38,6 +39,7 @@ export default {
     });
     return {
       article: matchingArticles[0],
+      global: await $strapi.find("global"),
     };
   },
   data() {
@@ -48,6 +50,29 @@ export default {
   methods: {
     moment,
     getStrapiMedia,
+  },
+  head() {
+    const { defaultSeo, favicon, siteName } = this.global;
+
+    // Merge default and article-specific SEO data
+    const fullSeo = {
+      ...defaultSeo,
+      metaTitle: this.article.title,
+      metaDescription: this.article.description,
+      shareImage: this.article.image,
+    };
+
+    return {
+      titleTemplate: `%s | ${siteName}`,
+      title: fullSeo.metaTitle,
+      meta: getMetaTags(fullSeo),
+      link: [
+        {
+          rel: "favicon",
+          href: getStrapiMedia(favicon.url),
+        },
+      ],
+    };
   },
 };
 </script>
