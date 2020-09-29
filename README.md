@@ -2,36 +2,11 @@
 
 Nuxt starter for creating a blog with Strapi.
 
-This starter allows you to try Strapi with Nuxt with the example of a simple blog. It is fully customizable and due to the fact that it is open source, fully open to contributions. Do not hesitate to add new features etc ...
-
-You may want to know how to develop such a starter by your own! This starter is actually the result of this [tutorial](https://strapi.io/blog/build-a-blog-using-nuxt-strapi-and-apollo)
-
 ![screenshot image](/screenshot.png)
 
-### Deploy the backend
+This starter allows you to try Strapi with Nuxt with the example of a simple blog. It is fully customizable and due to the fact that it is open source, fully open to contributions. So do not hesitate to add new features and report bugs!
 
-To deploy the Strapi instance you'll need:
-
-- [An Heroku account](https://signup.heroku.com/) for free
-- [A Cloudinary account for saving images](https://cloudinary.com/users/register/free) for free
-
-Once you have created these accounts you can deploy your instance by clicking on this button
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/strapi/strapi-starter-blog)
-
-[Here](https://github.com/strapi/strapi-starter-blog) is the repository of the backend of this starter
-
-### Deploy the frontend
-
-**On Netflify**
-
-Coming soon...
-
-**On Vercel**
-
-Coming soon...
-
-### Features
+## Features
 
 - 2 Content types: Article, Category
 - 2 Created articles
@@ -39,26 +14,32 @@ Coming soon...
 - Permissions set to `true` for article and category
 - Responsive design using UIkit
 
-### Pages
+Pages:
 
 - "/" display every articles
 - "/article/:id" display one article
 - "/category/:id" display articles depending on the category
 
-### Getting started
+## Getting started
 
-**Backend**
+The easiest way to try this starter is to run it locally on your computer.
 
-See full instructions [here](https://github.com/strapi/strapi-starter-blog)
+First, you'll need to create your own copy of this starter. You can do so by clicking [the "Use this template" button](https://github.com/strapi/strapi-starter-nuxt-blog/generate) on GitHub, and filling the [form](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
 
-**Frontend**
+### Backend
+
+Follow the instructions [on this repository](https://github.com/strapi/strapi-starter-blog)
+
+### Frontend
+
+Clone your repository:
 
 ```bash
-git clone https://github.com/strapi/strapi-starter-nuxt-blog.git
+git clone <your-github-repo-url>
 cd strapi-starter-nuxt-blog
 ```
 
-#### Start the frontend server
+Start the frontend server:
 
 ```bash
 # Using yarn
@@ -70,6 +51,6 @@ npm install
 npm run develop
 ```
 
-Nuxt server is running here => [http://localhost:3000](http://localhost:3000)
+The Nuxt server will run here => [http://localhost:3000](http://localhost:3000)
 
-Enjoy this starter
+Enjoy this starter!

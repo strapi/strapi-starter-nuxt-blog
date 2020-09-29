@@ -2,53 +2,19 @@
   <div>
     <div class="uk-child-width-1-2" uk-grid>
       <div>
-        <nuxt-link
+        <ArticleCard
           v-for="article in leftArticles"
-          :to="{ name: 'articles-id', params: { id: article.id } }"
-          class="uk-link-reset"
           :key="article.id"
-        >
-          <div class="uk-card uk-card-muted">
-            <div class="uk-card-media-top">
-              <img :src="api_url + article.image.url" alt="" height="100" />
-            </div>
-            <div class="uk-card-body">
-              <p
-                id="category"
-                v-if="article.category"
-                class="uk-text-uppercase"
-              >
-                {{ article.category.name }}
-              </p>
-              <p id="title" class="uk-text-large">{{ article.title }}</p>
-            </div>
-          </div>
-        </nuxt-link>
+          :article="article"
+        />
       </div>
       <div>
         <div class="uk-child-width-1-2@m uk-grid-match" uk-grid>
-          <nuxt-link
+          <ArticleCard
             v-for="article in rightArticles"
-            :to="{ name: 'articles-id', params: { id: article.id } }"
-            class="uk-link-reset"
             :key="article.id"
-          >
-            <div class="uk-card uk-card-muted">
-              <div class="uk-card-media-top">
-                <img :src="api_url + article.image.url" alt="" height="100" />
-              </div>
-              <div class="uk-card-body">
-                <p
-                  id="category"
-                  v-if="article.category"
-                  class="uk-text-uppercase"
-                >
-                  {{ article.category.name }}
-                </p>
-                <p id="title" class="uk-text-large">{{ article.title }}</p>
-              </div>
-            </div>
-          </nuxt-link>
+            :article="article"
+          />
         </div>
       </div>
     </div>
@@ -56,14 +22,17 @@
 </template>
 
 <script>
+import ArticleCard from "./ArticleCard";
+
 export default {
-  data: function() {
-    return {
-      api_url: process.env.strapiBaseUri
-    };
+  components: {
+    ArticleCard,
   },
   props: {
-    articles: Array
+    articles: {
+      type: Array,
+      default: () => [],
+    },
   },
   computed: {
     leftArticlesCount() {
@@ -74,7 +43,7 @@ export default {
     },
     rightArticles() {
       return this.articles.slice(this.leftArticlesCount, this.articles.length);
-    }
-  }
+    },
+  },
 };
 </script>
