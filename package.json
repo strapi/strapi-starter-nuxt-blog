@@ -7,7 +7,6 @@
   "scripts": {
     "dev": "nuxt",
     "develop": "nuxt",
-    "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue .",
