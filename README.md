@@ -51,6 +51,13 @@ npm install
 npm run develop
 ```
 
+
+If you want to change the default environment variables, create a `.env` file like this:
+
+```sh
+cp .env.example .env
+```
+
 The Nuxt server will run here => [http://localhost:3000](http://localhost:3000)
 
 Enjoy this starter!
