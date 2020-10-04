@@ -28,18 +28,27 @@ First, you'll need to create your own copy of this starter. You can do so by cli
 
 ### Backend
 
-Follow the instructions [on this repository](https://github.com/strapi/strapi-starter-blog)
+Create a Strapi project named `backend` using the [blog template](https://github.com/strapi/strapi-template-blog):
+
+```
+# Using Yarn
+yarn create strapi-app backend --template https://github.com/strapi/strapi-template-blog
+
+# Or using NPM
+npx create-strapi-app backend --template https://github.com/strapi/strapi-template-blog
+```
+
+The Strapi server will automatically start and import sample seed data.
 
 ### Frontend
 
-Clone your repository:
+Leave the Strapi backend running in the background. Open another terminal tab, and make sure you're in the `frontend` directory:
 
 ```bash
-git clone <your-github-repo-url>
-cd strapi-starter-nuxt-blog
+cd frontend
 ```
 
-Start the frontend server:
+Install dependencies and start the Nuxt server:
 
 ```bash
 # Using yarn
