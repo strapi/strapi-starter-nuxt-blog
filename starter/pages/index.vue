@@ -41,8 +41,9 @@ export default {
       meta: getMetaTags(fullSeo),
       link: [
         {
-          rel: "favicon",
+          rel: "icon",
           href: getStrapiMedia(favicon.url),
+          type: 'image/x-icon'
         },
       ],
     };
