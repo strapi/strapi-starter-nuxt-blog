@@ -1,3 +1,6 @@
 {
-  "template": "https://github.com/strapi/strapi-template-blog"
+  "template": {
+    "name": "@strapi/template-blog",
+    "version": "^1.0.0"
+  }
 }
