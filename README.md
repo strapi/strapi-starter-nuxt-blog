@@ -1,3 +1,9 @@
+**:no_entry: Deprecated**
+
+This repository is no longer maintained and only works for Strapi v3. To find the newest Strapi v4 starters, check out the [starters-and-templates monorepo](https://github.com/strapi/starters-and-templates/).
+
+---
+
 # Strapi Starter Nuxt Blog
 
 Nuxt starter for creating a blog with Strapi.
@@ -31,11 +37,7 @@ Pages:
 Use our `create-strapi-starter` CLI to create your project.
 
 ```sh
-# Using Yarn
-yarn create strapi-starter my-site nuxt-blog
-
-# Or using NPM
-npx create-strapi-starter my-site nuxt-blog
+npx create-strapi-starter@3 my-site nuxt-blog
 ```
 
 The CLI will create a monorepo, install dependencies, and run your project automatically.
